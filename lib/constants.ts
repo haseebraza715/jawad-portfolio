@@ -12,7 +12,7 @@ export const site = {
   location: "Berlin, Deutschland",
   email: "jawadasif1493@gmail.com",
   phone: "+36 20 521 6720",
-  linkedIn: "https://linkedin.com/in/jawadasif",
+  linkedIn: "https://www.linkedin.com/in/jawadasif1493/",
   cvPath: "/Asif_Jawad_CV.docx",
   /** Short line for Quick Facts (e.g. availability) */
   availability: "Open to opportunities",
