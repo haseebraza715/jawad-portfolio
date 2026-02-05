@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
+/* =============================================================================
+   New color system — no teal. Light: warm + navy | Dark: slate + soft blue
+   ============================================================================= */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light mode — warm neutral base */
+  --background: #f7f6f4;
+  --surface: #ffffff;
+  --surface-secondary: #f0eeeb;
+
+  /* Text */
+  --text-primary: #1a1c1e;
+  --text-secondary: #40464c;
+  --text-muted: #6b7280;
+
+  /* Borders */
+  --border: #e0ddd9;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* Accent — deep navy (no teal) */
+  --accent: #1e3a5f;
+  --accent-hover: #152d4a;
+  --accent-subtle: #e8ecf2;
+
+  /* Legacy aliases */
+  --foreground: var(--text-primary);
+  --muted: var(--text-muted);
+  --card-bg: var(--surface);
+  --card-border: var(--border-subtle);
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+
+  /* Nav */
+  --nav-bg: rgba(247, 246, 244, 0.94);
+  --nav-border: rgba(0, 0, 0, 0.07);
+
+  /* Tags */
+  --tag-bg: #eae8e5;
+  --tag-text: #2c3036;
+}
+
+.dark {
+  /* Dark mode — cool slate base */
+  --background: #0e1216;
+  --surface: #171c22;
+  --surface-secondary: #14191e;
+
+  /* Text */
+  --text-primary: #eef1f5;
+  --text-secondary: #a0a8b2;
+  --text-muted: #6e7884;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* Accent — soft blue (no teal) */
+  --accent: #5b8def;
+  --accent-hover: #7aa3f5;
+  --accent-subtle: rgba(91, 141, 239, 0.18);
+
+  /* Legacy aliases */
+  --foreground: var(--text-primary);
+  --muted: var(--text-muted);
+  --card-bg: var(--surface);
+  --card-border: var(--border);
+
+  /* Shadows */
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+  /* Nav */
+  --nav-bg: rgba(14, 18, 22, 0.94);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  /* Tags */
+  --tag-bg: rgba(255, 255, 255, 0.08);
+  --tag-text: #b4bcc6;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-subtle: var(--accent-subtle);
+  --font-heading: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: var(--accent-subtle);
+  color: var(--text-primary);
 }
