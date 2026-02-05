@@ -4,10 +4,11 @@ import { Highlights } from "@/components/Highlights";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
-import { EducationContent } from "@/components/Education";
-import { CertificationsContent } from "@/components/Certifications";
+import { Education } from "@/components/Education";
+import { Certifications } from "@/components/Certifications";
 import { AwardsContent } from "@/components/Awards";
-import { ContactContent } from "@/components/Contact";
+import { LanguagesContent } from "@/components/Languages";
+import { Contact } from "@/components/Contact";
 import { TwoColumnSection } from "@/components/TwoColumnSection";
 import { Footer } from "@/components/Footer";
 
@@ -27,22 +28,17 @@ export default function Home() {
         <Experience />
         <Projects />
         <Skills />
-        <TwoColumnSection
-          leftId="education"
-          leftTitle="Education"
-          leftChildren={<EducationContent />}
-          rightId="certifications"
-          rightTitle="Certifications"
-          rightChildren={<CertificationsContent />}
-        />
+        <Education />
+        <Certifications />
         <TwoColumnSection
           leftId="awards"
           leftTitle="Awards"
           leftChildren={<AwardsContent />}
-          rightId="contact"
-          rightTitle="Contact"
-          rightChildren={<ContactContent />}
+          rightId="languages"
+          rightTitle="Languages"
+          rightChildren={<LanguagesContent />}
         />
+        <Contact />
       </main>
       <Footer />
     </>

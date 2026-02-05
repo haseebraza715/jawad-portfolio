@@ -1,85 +1,76 @@
 @import "tailwindcss";
 
 /* =============================================================================
-   New color system — no teal. Light: warm + navy | Dark: slate + soft blue
+   Editorial palette — warm light, rich dark, distinctive accent
    ============================================================================= */
 
 :root {
-  /* Light mode — warm neutral base */
-  --background: #f7f6f4;
+  /* Light — warm paper */
+  --background: #faf9f6;
   --surface: #ffffff;
-  --surface-secondary: #f0eeeb;
+  --surface-secondary: #f3f2ee;
 
   /* Text */
-  --text-primary: #1a1c1e;
-  --text-secondary: #40464c;
-  --text-muted: #6b7280;
+  --text-primary: #1c1b18;
+  --text-secondary: #4a4844;
+  --text-muted: #6b6864;
 
   /* Borders */
-  --border: #e0ddd9;
+  --border: #e2dfd9;
   --border-subtle: rgba(0, 0, 0, 0.06);
 
-  /* Accent — deep navy (no teal) */
-  --accent: #1e3a5f;
-  --accent-hover: #152d4a;
-  --accent-subtle: #e8ecf2;
+  /* Accent — deep forest */
+  --accent: #2d5a4a;
+  --accent-hover: #234a3d;
+  --accent-subtle: #e6f0ec;
 
-  /* Legacy aliases */
+  /* Legacy */
   --foreground: var(--text-primary);
   --muted: var(--text-muted);
   --card-bg: var(--surface);
   --card-border: var(--border-subtle);
 
-  /* Shadows */
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.03);
-  --shadow-card-hover: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 10px 28px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.05);
 
-  /* Nav */
-  --nav-bg: rgba(247, 246, 244, 0.94);
+  --nav-bg: rgba(250, 249, 246, 0.96);
   --nav-border: rgba(0, 0, 0, 0.07);
 
-  /* Tags */
-  --tag-bg: #eae8e5;
-  --tag-text: #2c3036;
+  --tag-bg: #e8e6e2;
+  --tag-text: #2d2b28;
 }
 
 .dark {
-  /* Dark mode — cool slate base */
-  --background: #0e1216;
-  --surface: #171c22;
-  --surface-secondary: #14191e;
+  /* Dark — warm charcoal */
+  --background: #141618;
+  --surface: #1c1e21;
+  --surface-secondary: #181a1d;
 
-  /* Text */
-  --text-primary: #eef1f5;
-  --text-secondary: #a0a8b2;
-  --text-muted: #6e7884;
+  --text-primary: #f2f1ee;
+  --text-secondary: #b5b2ab;
+  --text-muted: #84817b;
 
-  /* Borders */
-  --border: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.09);
   --border-subtle: rgba(255, 255, 255, 0.05);
 
-  /* Accent — soft blue (no teal) */
-  --accent: #5b8def;
-  --accent-hover: #7aa3f5;
-  --accent-subtle: rgba(91, 141, 239, 0.18);
+  /* Accent — sage */
+  --accent: #5a9b82;
+  --accent-hover: #6eb398;
+  --accent-subtle: rgba(90, 155, 130, 0.2);
 
-  /* Legacy aliases */
   --foreground: var(--text-primary);
   --muted: var(--text-muted);
   --card-bg: var(--surface);
   --card-border: var(--border);
 
-  /* Shadows */
-  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04);
-  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-card-hover: 0 14px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
 
-  /* Nav */
-  --nav-bg: rgba(14, 18, 22, 0.94);
+  --nav-bg: rgba(20, 22, 24, 0.96);
   --nav-border: rgba(255, 255, 255, 0.08);
 
-  /* Tags */
-  --tag-bg: rgba(255, 255, 255, 0.08);
-  --tag-text: #b4bcc6;
+  --tag-bg: rgba(255, 255, 255, 0.09);
+  --tag-text: #c4c1ba;
 }
 
 @theme inline {

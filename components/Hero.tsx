@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FileDown, Linkedin } from "lucide-react";
+import { FileDown, Linkedin, FileText } from "lucide-react";
 import { site } from "@/lib/constants";
 import { Button } from "@/components/Button";
 
@@ -14,6 +14,14 @@ function CtaButtons() {
       >
         <FileDown className="w-4 h-4" aria-hidden />
         Download CV
+      </Button>
+      <Button
+        href="/cv"
+        variant="secondary"
+        className="inline-flex items-center gap-2"
+      >
+        <FileText className="w-4 h-4" aria-hidden />
+        View CV
       </Button>
       <Button
         href={site.linkedIn}
@@ -37,28 +45,8 @@ export function Hero() {
     >
       <div className="mx-auto max-w-[1120px] px-6 md:px-10">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-start">
-          {/* Left: intro + Quick Facts */}
+          {/* Left: intro (on mobile: description first, then picture) */}
           <div>
-            {/* Mobile: headshot, then CTAs below picture, then intro text */}
-            <div className="lg:hidden mb-8">
-              <div className="flex justify-center mb-4">
-                <div className="relative w-40 h-40 rounded-2xl overflow-hidden flex-shrink-0 aspect-square">
-                  <Image
-                    src="/headshot.jpeg"
-                    alt=""
-                    width={160}
-                    height={160}
-                    className="object-cover w-full h-full"
-                    priority
-                    sizes="160px"
-                  />
-                </div>
-              </div>
-              <div className="flex justify-center">
-                <CtaButtons />
-              </div>
-            </div>
-
             <h1
               id="hero-heading"
               className="font-[family-name:var(--font-heading)] text-2xl md:text-3xl font-semibold tracking-tight text-[var(--text-primary)] max-w-xl"
@@ -83,6 +71,26 @@ export function Hero() {
               <p className="mt-4 text-[var(--text-secondary)] text-sm md:text-base leading-relaxed max-w-xl">
                 His work spans structured planning, master data accuracy, and cross-functional coordination, with exposure to SAP-based environments and performance-driven decision support. Based in Berlin, he brings a pragmatic, systems-oriented approach to improving reliability, compliance, and operational efficiency in complex supply chains.
               </p>
+            </div>
+
+            {/* Mobile: picture after description, then CTAs */}
+            <div className="lg:hidden mt-8">
+              <div className="flex justify-center mb-4">
+                <div className="relative w-40 h-40 rounded-2xl overflow-hidden flex-shrink-0 aspect-square">
+                  <Image
+                    src="/headshot.jpeg"
+                    alt=""
+                    width={160}
+                    height={160}
+                    className="object-cover w-full h-full"
+                    priority
+                    sizes="160px"
+                  />
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <CtaButtons />
+              </div>
             </div>
           </div>
 

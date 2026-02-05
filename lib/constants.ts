@@ -13,7 +13,7 @@ export const site = {
   email: "jawadasif1493@gmail.com",
   phone: "+36 20 521 6720",
   linkedIn: "https://linkedin.com/in/jawadasif",
-  cvPath: "/Jawad_Asif_CV.pdf",
+  cvPath: "/Asif_Jawad_CV.docx",
   /** Short line for Quick Facts (e.g. availability) */
   availability: "Open to opportunities",
 } as const;
@@ -157,16 +157,6 @@ export const education = [
     period: "09/2018 – 09/2022",
     note: null,
   },
-] as const;
-
-export const certifications = [
-  "Supply Chain Foundations: Demand Planning Professional Certificate | CSCMP & LinkedIn | 11/2025",
-  "Inventory Management Foundations Certificate | LinkedIn Learning | 12/2025",
-  "Six Sigma Yellow Belt | 06/2021",
-  "Career Essentials in Sustainable Tech | Microsoft & LinkedIn | 10/2025",
-  "Career Essentials in Project Management | Microsoft, NASBA & PMI | 08/2025",
-  "DS Inno (Data Science-Driven Innovation in Business & Society) | University of Pisa | 03/2025",
-  "QUALITY4PPP (Blended Intensive Program in Quality Engineering) | Politehnica University of Bucharest | 05/2025",
 ] as const;
 
 export const awards = [

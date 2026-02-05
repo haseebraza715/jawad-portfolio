@@ -36,6 +36,14 @@ export function Nav() {
 
   const handleNavClick = () => setOpen(false);
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    handleNavClick();
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-[var(--nav-bg)] border-b border-[var(--nav-border)]">
       <nav
@@ -43,11 +51,14 @@ export function Nav() {
         aria-label="Main navigation"
       >
         <Link
-          href="#"
-          className="font-[family-name:var(--font-heading)] text-lg font-semibold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded"
-          onClick={handleNavClick}
+          href="/"
+          onClick={handleLogoClick}
+          className="flex items-center gap-2.5 font-[family-name:var(--font-heading)] text-lg font-semibold text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded"
         >
-          {site.name}
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--accent)] text-sm font-bold text-white shrink-0">
+            J
+          </span>
+          <span>Jawad Asif</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
@@ -66,6 +77,12 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/cv"
+            className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded py-1"
+          >
+            View CV
+          </Link>
           <Button href={site.cvPath} variant="primary" download>
             Download CV
           </Button>

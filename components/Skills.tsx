@@ -2,11 +2,13 @@ import { skillGroups } from "@/lib/constants";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 
+const skillGroupsWithoutLanguages = skillGroups.filter((g) => g.title !== "Languages");
+
 export function Skills() {
   return (
     <Section id="skills" title="Skills">
       <div className="grid gap-8 lg:gap-12 sm:grid-cols-2">
-        {skillGroups.map((group) => (
+        {skillGroupsWithoutLanguages.map((group) => (
           <Card key={group.title}>
             <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--text-primary)] text-base mb-3">
               {group.title}

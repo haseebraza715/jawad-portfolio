@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { JsonLdPerson } from "@/components/JsonLdPerson";
+import { BackToTop } from "@/components/BackToTop";
 
 const ibmPlexSans = IBM_Plex_Sans({
   weight: ["400", "500", "600", "700"],
@@ -72,6 +73,7 @@ export default function RootLayout({
         <ThemeProvider>
           <JsonLdPerson />
           {children}
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
